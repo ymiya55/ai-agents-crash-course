@@ -1,7 +1,12 @@
-sqlite3
 openai-agents
 python-dotenv
 chainlit
 chromadb
 ipykernel
 pandas
+
+# development
+flake8
+autopep8
+isort
+black[jupyter]
