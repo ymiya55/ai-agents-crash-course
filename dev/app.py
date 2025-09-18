@@ -27,7 +27,7 @@ def search_kb(query: str) -> str:
 agent = Agent(
     name="Assistant",
     instructions="""
-    You are a helpful assistant. If it's about calories, first always search the knowledge base for information about the question. 
+    You are a helpful assistant. If it's about calories, first always search the knowledge base for information about the question.
     IMPORTANT: If there is no explicit quantitative information about the calories in the knowledge base, ALWAYS use the exasearch tool to search the web for information.
     If it's not about calories, don't use tools. Only talk about calories, not about arbitrary topics
     If it's not about food and not saying hi, but about an arbitrary topic, respond with: "I'm sorry, I can only talk about calories.".
@@ -41,8 +41,7 @@ agent = Agent(
                 "server_label": "exasearch",
                 "server_url": "https://mcp.exa.ai/mcp?exaApiKey=ecdb1348-0ebf-4adf-ae6d-f08620c8bdc5",
                 "require_approval": "never",
-            }
-        ),
+            }),
     ],
 )
 
@@ -78,7 +77,10 @@ async def main(message: cl.Message):
             item = event.data.item
             if hasattr(item, "type") and item.type == "mcp_call":
                 async with cl.Step(name="MCP call: ExaSearch") as step:
-                    step.output = f"MCP call: {item.name} on server '{item.server_label}' with args: {item.arguments}"
+                    step.output = f"MCP call: {
+                        item.name} on server '{
+                        item.server_label}' with args: {
+                        item.arguments}"
                     step.update()
                     # print(
                     #    f"\nMCP call: {item.name} on server '{item.server_label}' with args: {item.arguments}"

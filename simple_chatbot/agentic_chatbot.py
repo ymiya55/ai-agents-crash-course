@@ -7,10 +7,12 @@ from nutrition_agent import nutrition_agent
 
 dotenv.load_dotenv()
 
+
 @cl.on_chat_start
 async def on_chat_start():
     session = SQLiteSession("conversation_history")
     cl.user_session.set("agent_session", session)
+
 
 @cl.on_message
 async def on_message(message: cl.Message):
@@ -31,14 +33,18 @@ async def on_message(message: cl.Message):
             await msg.stream_token(token=event.data.delta)
             print(event.data.delta, end="", flush=True)
 
-        elif (event.type == "raw_response_event" 
-            and hasattr(event.data, "item") 
+        elif (
+            event.type == "raw_response_event"
+            and hasattr(event.data, "item")
             and hasattr(event.data.item, "type")
             and event.data.item.type == "function_call"
-            and len(event.data.item.arguments) > 0):
+            and len(event.data.item.arguments) > 0
+        ):
             with cl.Step(name=f"{event.data.item.name}", type="tool") as step:
                 step.input = event.data.item.arguments
-                print(f"\nTool call: {event.data.item.name} with args: {event.data.item.arguments}")
+                print(
+                    f"\nTool call: {
+                        event.data.item.name} with args: {
+                        event.data.item.arguments}")
 
     await msg.update()
-    

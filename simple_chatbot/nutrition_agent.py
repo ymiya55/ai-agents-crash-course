@@ -2,8 +2,15 @@ import os
 from pathlib import Path
 
 import chromadb
-from agents import (Agent, GuardrailFunctionOutput, RunContextWrapper, Runner,
-                    TResponseInputItem, function_tool, input_guardrail)
+from agents import (
+    Agent,
+    GuardrailFunctionOutput,
+    RunContextWrapper,
+    Runner,
+    TResponseInputItem,
+    function_tool,
+    input_guardrail,
+)
 from agents.mcp import MCPServerStreamableHttp
 from pydantic import BaseModel
 
