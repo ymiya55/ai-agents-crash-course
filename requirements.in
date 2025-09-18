@@ -4,6 +4,7 @@ chainlit
 chromadb
 ipykernel
 pandas
+tqdm
 
 # development
 flake8
