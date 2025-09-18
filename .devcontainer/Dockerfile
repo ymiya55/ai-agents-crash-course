@@ -9,10 +9,11 @@ RUN apt-get update && \
 #    # Install devcontainer CLI globally
 #    npm install -g @devcontainers/cli
 
-COPY requirements.in /tmp/requirements.in
+#COPY requirements.in /tmp/requirements.in
+COPY requirements.txt /tmp/requirements.txt
 USER vscode
 ENV PATH=/home/vscode/.local/bin:$PATH
 
-RUN pip install --user -r /tmp/requirements.in
+RUN pip install --user -r /tmp/requirements.txt
 
 # EXPOSE 5000
