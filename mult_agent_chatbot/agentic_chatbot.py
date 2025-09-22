@@ -46,15 +46,18 @@ async def on_message(message: cl.Message):
                 print(
                     f"\nTool call: {
                         event.data.item.name} with args: {
-                        event.data.item.arguments}")
+                        event.data.item.arguments}"
+                )
 
     await msg.update()
 
 
 @cl.password_auth_callback
 def auth_callback(username: str, password: str):
-    if (username, password) == (os.getenv("CHAINLIT_USERNAME"),
-                                os.getenv("CHAINLIT_PASSWORD")):
+    if (username, password) == (
+        os.getenv("CHAINLIT_USERNAME"),
+        os.getenv("CHAINLIT_PASSWORD"),
+    ):
         return cl.User(
             identifier="Student",
             metadata={"role": "student", "provider": "credentials"},
