@@ -24,7 +24,7 @@ chainlit run -w agentic_chatbot.py --port 10000 --host 0.0.0.0
 
 The URL for our demo logo: 
 ```
-https://upload.wikimedia.org/wikipedia/commons/c/c3/Logo_wikibot.svg
+https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg
 ```
 
 ### Adding Authentication
