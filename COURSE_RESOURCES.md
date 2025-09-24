@@ -31,3 +31,8 @@ https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg
 1) Generate a Chainlit Secret: `chainlit create-secret`
 2) Add the secret to `.env`
 3) Pick an arbitrary username and password and fill in the `CHAINLIT_USERNAME` and `CHAINLIT_PASSWORD` values in `.env`
+
+# Datasets
+Here are the originals of the datasets we use in the course:
+* [Calorie Database](https://www.kaggle.com/datasets/kkhandekar/calories-in-food-items-per-100-grams)
+* [Nutritionist Q&A](https://huggingface.co/datasets/RaniRahbani/nutritionist)
