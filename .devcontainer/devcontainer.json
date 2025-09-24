@@ -25,6 +25,11 @@
 				"ms-python.flake8",
 				"GitHub.copilot"
 			]
+		},
+		"codespaces": {
+			"openFiles": [
+				"COURSE_RESOURCES.md"
+			]
 		}
 	},
 	"remoteEnv": {
@@ -34,22 +39,16 @@
 	//"postAttachCommand": "bash .devcontainer/setup-terminal.sh",
 	// Update port forwarding configuration
 	"forwardPorts": [
-		//"5050:5000",
-		//"8000:8000"
-	],
-	"appPort": [
-		//"8000"
+		10000
 	],
 	"remoteUser": "vscode",
 	"runArgs": [
 		//"--network=host"
 	],
 	"portsAttributes": {
-		//"5050": {
-		//"label": "MLflow UI",
-		//"onAutoForward": "notify",
-		//"protocol": "https",
-		//"localPort": 5000
-		//}
+		"10000": {
+			"label": "Chainlit UI",
+			"onAutoForward": "openBrowser"
+		}
 	}
 }
