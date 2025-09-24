@@ -13,7 +13,13 @@ code .env
 
 ## Our First Agent
 
+* [Understanding async/await in Python](https://realpython.com/async-io-python/)
 * [OpenAI Tracing UI](https://platform.openai.com/logs?api=traces)
+
+## MCP
+* [Smithery.ai MCP Hub](https://smithery.ai/)
+* [Exa Search](https://exa.ai/)
+* [OpenAI Tools Documentation](https://openai.github.io/openai-agents-python/tools/) for the exercise
 
 ## Running the Chatbot
 One-time setup
