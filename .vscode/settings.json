@@ -1,0 +1,158 @@
+{
+    "amazonwebservices.aws-toolkit-vscode": {
+        "enabled": false
+    },
+    "boto3typed.boto3-ide": {
+        "enabled": false
+    },
+    "cameron.vscode-pytest": {
+        "enabled": false
+    },
+    "dbaeumer.vscode-eslint": {
+        "enabled": false
+    },
+    "dbtlabsinc.dbt": {
+        "enabled": false
+    },
+    "eamodio.gitlens": {
+        "enabled": false
+    },
+    "editorconfig.editorconfig": {
+        "enabled": false
+    },
+    "formulahendry.docker-explorer": {
+        "enabled": false
+    },
+    "github.codespaces": {
+        "enabled": true
+    },
+    "github.copilot": {
+        "enabled": true
+    },
+    "github.copilot-chat": {
+        "enabled": true
+    },
+    "github.github-vscode-theme": {
+        "enabled": true
+    },
+    "github.vscode-github-actions": {
+        "enabled": false
+    },
+    "github.vscode-pull-request-github": {
+        "enabled": false
+    },
+    "humao.rest-client": {
+        "enabled": false
+    },
+    "innoverio.vscode-dbt-power-user": {
+        "enabled": false
+    },
+    "joshx.workspace-terminals": {
+        "enabled": false
+    },
+    "kennylong.kubernetes-yaml-formatter": {
+        "enabled": false
+    },
+    "mark-tucker.aws-cli-configure": {
+        "enabled": false
+    },
+    "matangover.mypy": {
+        "enabled": false
+    },
+    "mechatroner.rainbow-csv": {
+        "enabled": false
+    },
+    "meezilla.json": {
+        "enabled": false
+    },
+    "mikoz.autoflake-extension": {
+        "enabled": false
+    },
+    "ms-azuretools.vscode-containers": {
+        "enabled": false
+    },
+    "ms-azuretools.vscode-docker": {
+        "enabled": false
+    },
+    "ms-python.autopep8": {
+        "enabled": false
+    },
+    "ms-python.black-formatter": {
+        "enabled": false
+    },
+    "ms-python.debugpy": {
+        "enabled": false
+    },
+    "ms-python.flake8": {
+        "enabled": false
+    },
+    "ms-python.isort": {
+        "enabled": false
+    },
+    "ms-python.python": {
+        "enabled": true
+    },
+    "ms-python.vscode-pylance": {
+        "enabled": false
+    },
+    "ms-python.vscode-python-envs": {
+        "enabled": true
+    },
+    "ms-toolsai.jupyter": {
+        "enabled": true
+    },
+    "ms-toolsai.jupyter-keymap": {
+        "enabled": true
+    },
+    "ms-toolsai.jupyter-renderers": {
+        "enabled": true
+    },
+    "ms-toolsai.vscode-jupyter-cell-tags": {
+        "enabled": true
+    },
+    "ms-toolsai.vscode-jupyter-slideshow": {
+        "enabled": true
+    },
+    "ms-vscode.live-server": {
+        "enabled": false
+    },
+    "ms-vscode.makefile-tools": {
+        "enabled": false
+    },
+    "ms-vsliveshare.vsliveshare": {
+        "enabled": false
+    },
+    "natqe.reload": {
+        "enabled": false
+    },
+    "pamaron.pytest-runner": {
+        "enabled": false
+    },
+    "redhat.vscode-yaml": {
+        "enabled": false
+    },
+    "reduckted.vscode-gitweblinks": {
+        "enabled": false
+    },
+    "rlivings39.fzf-quick-open": {
+        "enabled": false
+    },
+    "samuelcolvin.jinjahtml": {
+        "enabled": false
+    },
+    "saoudrizwan.claude-dev": {
+        "enabled": false
+    },
+    "tamasfe.even-better-toml": {
+        "enabled": false
+    },
+    "timonwong.shellcheck": {
+        "enabled": false
+    },
+    "uctakeoff.vscode-counter": {
+        "enabled": false
+    },
+    "zainchen.json": {
+        "enabled": false
+    }
+}
