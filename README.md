@@ -2,7 +2,8 @@
 
 <div align="center">
 
-![AI Agents Crash Course](.dev/course-image.jpg)
+<img src=".dev/course-image.jpg" alt="AI Agents Crash Course" width="400"/>
+
 [![Udemy Course](https://img.shields.io/badge/Udemy-AI%20Agents%20Crash%20Course-EC5252?style=for-the-badge&logo=udemy&logoColor=white)](https://www.udemy.com/course/YOUR-COURSE-LINK-HERE)
 
 </div>
