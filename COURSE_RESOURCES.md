@@ -24,8 +24,7 @@ code .env
 ## Running the Chatbot
 One-time setup
 ```
-cd chatbot
-chainlit run -w agentic_chatbot.py --port 10000 --host 0.0.0.0
+cd chatbot && chainlit run 4_authentication.py --port 10000 --host 0.0.0.0
 ```
 
 The URL for our demo logo: 
@@ -37,6 +36,11 @@ https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg
 1) Generate a Chainlit Secret: `chainlit create-secret`
 2) Add the secret to `.env`
 3) Pick an arbitrary username and password and fill in the `CHAINLIT_USERNAME` and `CHAINLIT_PASSWORD` values in `.env`
+
+## Deployment
+Here is the command:
+```
+chainlit run chatbot/4_authentication.py --port 10000 --host 0.0.0.0
 
 # Datasets
 Here are the originals of the datasets we use in the course:
