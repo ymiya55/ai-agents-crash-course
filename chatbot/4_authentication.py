@@ -1,10 +1,11 @@
-import os
-
 import chainlit as cl
 import dotenv
-from agents import InputGuardrailTripwireTriggered, Runner, SQLiteSession
-from nutrition_agent import nutrition_agent
+import os
+
 from openai.types.responses import ResponseTextDeltaEvent
+
+from agents import Runner, SQLiteSession
+from nutrition_agent import nutrition_agent
 
 dotenv.load_dotenv()
 
@@ -19,11 +20,7 @@ async def on_chat_start():
 async def on_message(message: cl.Message):
     session = cl.user_session.get("agent_session")
 
-    result = Runner.run_streamed(
-        nutrition_agent,
-        message.content,
-        session=session,
-    )
+    result = Runner.run_streamed(nutrition_agent, message.content, session=session)
 
     msg = cl.Message(content="")
     async for event in result.stream_events():
@@ -32,7 +29,6 @@ async def on_message(message: cl.Message):
             event.data, ResponseTextDeltaEvent
         ):
             await msg.stream_token(token=event.data.delta)
-            print(event.data.delta, end="", flush=True)
 
         elif (
             event.type == "raw_response_event"
@@ -43,14 +39,8 @@ async def on_message(message: cl.Message):
         ):
             with cl.Step(name=f"{event.data.item.name}", type="tool") as step:
                 step.input = event.data.item.arguments
-                print(
-                    f"\nTool call: {
-                        event.data.item.name} with args: {
-                        event.data.item.arguments}"
-                )
 
     await msg.update()
-
 
 @cl.password_auth_callback
 def auth_callback(username: str, password: str):
