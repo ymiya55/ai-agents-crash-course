@@ -2,9 +2,10 @@
 
 <div align="center">
 
-<img src=".dev/course-image.jpg" alt="AI Agents Crash Course" width="400"/>
+<a href="https://www.udemy.com/course/ai-agents-crash-course/?referralCode=F4BD5DE2C0DD0F1FF71B">
+<img src=".dev/course-image.jpg" alt="AI Agents Crash Course" width="400"/></a>
 
-[![Udemy Course](https://img.shields.io/badge/Udemy-AI%20Agents%20Crash%20Course-EC5252?style=for-the-badge&logo=udemy&logoColor=white)](https://www.udemy.com/course/YOUR-COURSE-LINK-HERE)
+[![Udemy Course](https://img.shields.io/badge/Udemy-AI%20Agents%20Crash%20Course-EC5252?style=for-the-badge&logo=udemy&logoColor=white)](https://www.udemy.com/course/ai-agents-crash-course/?referralCode=F4BD5DE2C0DD0F1FF71B)
 
 </div>
 
