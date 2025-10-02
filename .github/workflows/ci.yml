@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: ['*']
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 2 AM UTC
+  workflow_dispatch:
+    inputs:
+      run_notebooks:
+        description: 'Execute all notebooks'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  lint-and-syntax-check:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/nordquant/ai-agents-crash-course-codespace:latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Create .env file from secret
+      run: echo "${{ secrets.ENV_FILE }}" > .env
+      shell: bash
+
+    - name: Check Python syntax in chatbot_complete
+      run: |
+        echo "Checking Python syntax in chatbot_complete directory..."
+        find ./chatbot_complete -name "*.py" -exec python -m py_compile {} \;
+      shell: bash
+
+    - name: Check Python syntax in rag_setup
+      run: |
+        echo "Checking Python syntax in rag_setup directory..."
+        find ./rag_setup -name "*.py" -exec python -m py_compile {} \;
+      shell: bash
+
+    - name: Check notebook syntax
+      run: |
+        echo "Checking notebook syntax..."
+        # Check notebooks in main notebooks directory
+        find ./notebooks -name "*.ipynb" -exec jupyter nbconvert --to python --stdout {} \; > /dev/null
+        # Check notebooks in solutions directory
+        find ./solutions -name "*.ipynb" -exec jupyter nbconvert --to python --stdout {} \; > /dev/null
+      shell: bash
+
+  execute-notebooks:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/nordquant/ai-agents-crash-course-codespace:latest
+    needs: lint-and-syntax-check
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_notebooks == 'true'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Create .env file from secret
+      run: echo "${{ secrets.ENV_FILE }}" > .env
+      shell: bash
+
+    - name: Execute notebooks in notebooks directory
+      run: |
+        echo "Executing notebooks in notebooks directory..."
+        for notebook in ./notebooks/*.ipynb; do
+          if [ -f "$notebook" ]; then
+            echo "Executing: $notebook"
+            jupyter nbconvert --to notebook --execute --inplace "$notebook" || echo "Failed to execute $notebook"
+          fi
+        done
+      shell: bash
+
+    - name: Execute notebooks in solutions directory
+      run: |
+        echo "Executing notebooks in solutions directory..."
+        for notebook in ./solutions/*.ipynb; do
+          if [ -f "$notebook" ]; then
+            echo "Executing: $notebook"
+            jupyter nbconvert --to notebook --execute --inplace "$notebook" || echo "Failed to execute $notebook"
+          fi
+        done
+      shell: bash
+
+    - name: Upload executed notebooks as artifacts
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: executed-notebooks
+        path: |
+          ./notebooks/*.ipynb
+          ./solutions/*.ipynb
+        retention-days: 7
