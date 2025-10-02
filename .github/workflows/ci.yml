@@ -105,26 +105,7 @@ jobs:
         '
       shell: bash
 
-  execute-notebooks:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/nordquant/ai-agents-crash-course-codespace:latest
-      options: --user root
-    needs: lint-and-syntax-check
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Install Python dependencies
-      run: su vscode -c "pip install -r .github/requirements.txt"
-      shell: bash
-
-    - name: Create .env file from secret
-      run: su vscode -c 'echo "${{ secrets.ENV_FILE }}" > .env'
-      shell: bash
-
-    - name: Execute notebooks in notebooks directory
+    - name: Execute notebooks
       run: |
         su vscode -c '
         echo "Executing notebooks in notebooks directory..."
@@ -134,12 +115,7 @@ jobs:
             jupyter nbconvert --to notebook --execute --inplace "$notebook" || echo "Failed to execute $notebook"
           fi
         done
-        '
-      shell: bash
 
-    - name: Execute notebooks in solutions directory
-      run: |
-        su vscode -c '
         echo "Executing notebooks in solutions directory..."
         for notebook in ./solutions/*.ipynb; do
           if [ -f "$notebook" ]; then
