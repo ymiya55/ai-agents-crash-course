@@ -6,19 +6,12 @@ on:
   schedule:
     - cron: '0 2 * * *'  # Daily at 2 AM UTC
   workflow_dispatch:
-    inputs:
-      run_notebooks:
-        description: 'Execute all notebooks'
-        required: false
-        default: 'true'
-        type: boolean
 
 jobs:
   lint-and-syntax-check:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/nordquant/ai-agents-crash-course-codespace:latest
-      options: --user root
 
     steps:
     - name: Checkout code
@@ -103,7 +96,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/nordquant/ai-agents-crash-course-codespace:latest
-      options: --user root
     needs: lint-and-syntax-check
 
     steps:
