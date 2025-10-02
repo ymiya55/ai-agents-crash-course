@@ -23,7 +23,7 @@ jobs:
       shell: bash
 
     - name: Create .env file from secret
-      run: su vscode -c 'echo "${{ secrets.ENV_FILE }}" > .env'
+      run: echo "${{ secrets.ENV_FILE }}" > .env
       shell: bash
 
     - name: Test Exa Search MCP endpoint
