@@ -24,6 +24,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Install Python dependencies
+      run: pip install -r .github/requirements.txt
+      shell: bash
+
     - name: Create .env file from secret
       run: echo "${{ secrets.ENV_FILE }}" > .env
       shell: bash
@@ -60,6 +64,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: Install Python dependencies
+      run: pip install -r .github/requirements.txt
+      shell: bash
 
     - name: Create .env file from secret
       run: echo "${{ secrets.ENV_FILE }}" > .env
