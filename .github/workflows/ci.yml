@@ -51,19 +51,6 @@ jobs:
         '
       shell: bash
 
-    - name: Check notebooks folder is empty
-      run: |
-        su vscode -c '
-        echo "Checking that notebooks folder is empty (except .gitkeep)..."
-        file_count=$(find ./notebooks -type f ! -name ".gitkeep" | wc -l)
-        if [ "$file_count" -ne 0 ]; then
-          echo "Error: notebooks folder must be empty (only .gitkeep allowed)"
-          find ./notebooks -type f ! -name ".gitkeep"
-          exit 1
-        fi
-        echo "✓ notebooks folder is empty"
-        '
-      shell: bash
 
     - name: Check chatbot folder structure
       run: |
@@ -103,26 +90,25 @@ jobs:
       run: |
         su vscode -c '
         echo "Checking notebook syntax..."
-        # Check notebooks in main notebooks directory
-        find ./notebooks -name "*.ipynb" -exec jupyter nbconvert --to python --stdout {} \; > /dev/null
-        # Check notebooks in solutions directory
+        # Check notebooks in solutions and notebooks_complete directories
         find ./solutions -name "*.ipynb" -exec jupyter nbconvert --to python --stdout {} \; > /dev/null
+        find ./notebooks_complete -name "*.ipynb" -exec jupyter nbconvert --to python --stdout {} \; > /dev/null
         '
       shell: bash
 
     - name: Execute notebooks
       run: |
         su vscode -c '
-        echo "Executing notebooks in notebooks directory..."
-        for notebook in ./notebooks/*.ipynb; do
+        echo "Executing notebooks in solutions directory..."
+        for notebook in ./solutions/*.ipynb; do
           if [ -f "$notebook" ]; then
             echo "Executing: $notebook"
             jupyter nbconvert --to notebook --execute --inplace "$notebook" || echo "Failed to execute $notebook"
           fi
         done
 
-        echo "Executing notebooks in solutions directory..."
-        for notebook in ./solutions/*.ipynb; do
+        echo "Executing notebooks in notebooks_complete directory..."
+        for notebook in ./notebooks_complete/*.ipynb; do
           if [ -f "$notebook" ]; then
             echo "Executing: $notebook"
             jupyter nbconvert --to notebook --execute --inplace "$notebook" || echo "Failed to execute $notebook"
@@ -137,6 +123,6 @@ jobs:
       with:
         name: executed-notebooks
         path: |
-          ./notebooks/*.ipynb
           ./solutions/*.ipynb
+          ./notebooks_complete/*.ipynb
         retention-days: 7
