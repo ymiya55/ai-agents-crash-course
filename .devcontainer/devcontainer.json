@@ -18,6 +18,10 @@
 	"image": "ghcr.io/nordquant/ai-agents-crash-course-codespace:latest",
 	"customizations": {
 		"vscode": {
+			"settings": {
+				"extensions.autoUpdate": false,
+				"extensions.autoCheckUpdates": false
+			},
 			"extensions": [
 				"ms-toolsai.jupyter",
 				"ms-python.python"
