@@ -23,7 +23,7 @@
 				"extensions.autoCheckUpdates": false
 			},
 			"extensions": [
-				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter@2025.7.0",
 				"ms-python.python"
 			]
 		},
