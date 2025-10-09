@@ -20,11 +20,7 @@
 		"vscode": {
 			"extensions": [
 				"ms-toolsai.jupyter",
-				"ms-python.python",
-				"ms-python.black-formatter",
-				"ms-python.isort",
-				"ms-python.flake8",
-				"GitHub.copilot"
+				"ms-python.python"
 			]
 		},
 		"codespaces": {
