@@ -121,6 +121,9 @@ Instructions for the "Error Message" Agent:
 Politely inform the user that this workflow is focused exclusively on nutrition topics and cannot assist with non-nutrition-related inquiries.
 ```
 
+## Chatkit
+* [The OpenAI ChatKit Starter App](https://github.com/openai/openai-chatkit-starter-app)
+
 # Datasets
 Here are the originals of the datasets we use in the course:
 * [Calorie Database](https://www.kaggle.com/datasets/kkhandekar/calories-in-food-items-per-100-grams)
