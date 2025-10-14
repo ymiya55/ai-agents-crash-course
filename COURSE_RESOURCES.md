@@ -41,11 +41,7 @@ https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg
 Here is the command:
 ```
 chainlit run chatbot/4_authentication.py --port 10000 --host 0.0.0.0
-
-# Datasets
-Here are the originals of the datasets we use in the course:
-* [Calorie Database](https://www.kaggle.com/datasets/kkhandekar/calories-in-food-items-per-100-grams)
-* [Nutritionist Q&A](https://huggingface.co/datasets/RaniRahbani/nutritionist)
+```
 
 ## AgentBuilder
 
@@ -53,3 +49,7 @@ Here are the originals of the datasets we use in the course:
 * [calories.csv](https://nutrition-datasets.s3.amazonaws.com/calories.csv)
 * [questions_output.txt](https://nutrition-datasets.s3.amazonaws.com/questions_output.txt)
 
+# Datasets
+Here are the originals of the datasets we use in the course:
+* [Calorie Database](https://www.kaggle.com/datasets/kkhandekar/calories-in-food-items-per-100-grams)
+* [Nutritionist Q&A](https://huggingface.co/datasets/RaniRahbani/nutritionist)
