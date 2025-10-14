@@ -46,3 +46,10 @@ chainlit run chatbot/4_authentication.py --port 10000 --host 0.0.0.0
 Here are the originals of the datasets we use in the course:
 * [Calorie Database](https://www.kaggle.com/datasets/kkhandekar/calories-in-food-items-per-100-grams)
 * [Nutritionist Q&A](https://huggingface.co/datasets/RaniRahbani/nutritionist)
+
+## AgentBuilder
+
+* [The AgentBuilder UI](https://platform.openai.com/agent-builder)
+* [calories.csv](https://nutrition-datasets.s3.amazonaws.com/calories.csv)
+* [questions_output.txt](https://nutrition-datasets.s3.amazonaws.com/questions_output.txt)
+
