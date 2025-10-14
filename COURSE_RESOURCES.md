@@ -47,7 +47,7 @@ chainlit run chatbot/4_authentication.py --port 10000 --host 0.0.0.0
 
 * [The AgentBuilder UI](https://platform.openai.com/agent-builder)
 
-### Datasets for the File Search Too
+### Datasets for the File Search Tool
 * [calorie_database.txt](https://nutrition-datasets.s3.amazonaws.com/calorie_database.txt)
 * [questions_output.txt](https://nutrition-datasets.s3.amazonaws.com/questions_output.txt)
 
