@@ -15,7 +15,7 @@
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-	"image": "ghcr.io/nordquant/ai-agents-crash-course-codespace:chatkit",
+	"image": "ghcr.io/nordquant/ai-agents-crash-course-codespace:latest-release",
 	"customizations": {
 		"vscode": {
 			"settings": {

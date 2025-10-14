@@ -18,3 +18,5 @@ dist/
 build/
 .next/
 .cache/
+
+/Dockerfile
